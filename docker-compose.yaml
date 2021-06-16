@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+    db:
+        image: mysql:8.0.19
+        restart: always
+        environment: 
+            - MYSQL_DATABASE=example
+            - MYSQL_ROOT_PASSWORD=pass
+    app:
+        build: app
+        restart: always
+        ports:
+            - 5000:5000

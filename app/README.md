@@ -12,3 +12,9 @@ cd <project_path>/l-docker-sim
 docker build -t docker-sim app/
 docker run --rm docker-sim
 ```
+
+The application will require database. To achieve it, the `compose` file was added.
+To run:
+```shell
+docker-compose up
+```
