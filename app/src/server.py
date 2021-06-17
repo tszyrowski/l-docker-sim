@@ -63,7 +63,7 @@ def listBlog():
 
 @server.route("/")
 def hello():
-    return flask.jsonify("Hello world from dock compose")
+    return flask.jsonify("Hello world from dock compose UPDATED")
 
 
 if __name__ == "__main__":

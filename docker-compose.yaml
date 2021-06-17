@@ -17,10 +17,12 @@ services:
         build: app
         restart: always
         secrets:
-            - db-password
+            - db-password  
+        volumes:                     # mount volume on build for faster debugging
+            - ./app/src:/src
         networks:
-        - backend-network
-        - frontend-network
+            - backend-network
+            - frontend-network
     web:
         build: web
         restart: always
