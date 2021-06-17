@@ -25,7 +25,7 @@ services:
         build: web
         restart: always
         ports:
-            - 80:80
+            - 8090:80
         networks:
             - frontend-network
 
