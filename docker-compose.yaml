@@ -20,6 +20,8 @@ services:
             - db-password  
         volumes:                     # mount volume on build for faster debugging
             - ./app/src:/src
+        ports:
+            - 3000:3000
         networks:
             - backend-network
             - frontend-network

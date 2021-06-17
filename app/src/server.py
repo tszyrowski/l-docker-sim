@@ -4,8 +4,8 @@ import flask
 import mysql.connector
 
 # for debugging from Visual Studio Code -- turn off flask debugger first
-# import ptvsd
-# ptvsd.enable_attach(address=('0.0.0.0', 3000))
+import ptvsd
+ptvsd.enable_attach(address=('0.0.0.0', 3000))
 
 
 class DBManager:
@@ -20,7 +20,7 @@ class DBManager:
             database=database,
             auth_plugin="mysql_native_password"
         )
-        pf.cloe()
+        pf.close()
         self.cursor = self.connection.cursor()
 
     def populate_db(self):
@@ -63,8 +63,8 @@ def listBlog():
 
 @server.route("/")
 def hello():
-    return flask.jsonify("Hello world from dock compose UPDATED")
+    return flask.jsonify("Hello world from dock compose UPDATED deb")
 
 
 if __name__ == "__main__":
-    server.run(debug=True, host="0.0.0.0", port=5000)
+    server.run(host="0.0.0.0", port=5000)
